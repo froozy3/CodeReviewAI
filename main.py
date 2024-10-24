@@ -1,10 +1,13 @@
-import cohere, httpx, logging
+import cohere, httpx, logging, os
 from models import ReviewResponse, ReviewRequest
+from dotenv import load_dotenv
 
-GITHUB_TOKEN = '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'
-COHERE_API_KEY = 'AZN0mxbYzr80h7vuY9mmKJZYjmLoHItR2ejlDznd'
+load_dotenv()
 
-co = cohere.AsyncClientV2(COHERE_API_KEY)
+GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+CO_API_KEY = os.getenv('CO_API_KEY')
+
+co = cohere.AsyncClientV2(CO_API_KEY)
 
 
 # returns content repository

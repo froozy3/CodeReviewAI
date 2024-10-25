@@ -11,7 +11,7 @@ class ReviewRequest(BaseModel):
 class ReviewResponse(BaseModel):
     found_files: List[str]
     downsides: str
-    rating: int
+    rating: str
     conclusion: str
     candidate_level: Literal['Junior', 'Middle', 'Senior']
     github_repo_url: str

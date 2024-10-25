@@ -1,5 +1,16 @@
-.env
+# Ignore Python cache
 __pycache__/
+*.pyc
+
+# Ignore virtual environment
 .venv/
 venv/
-gi
+
+# Ignore cache files
+.mypy_cache/
+.pytest_cache/
+
+# Ignore other unnecessary files
+*.egg-info/
+
+.env

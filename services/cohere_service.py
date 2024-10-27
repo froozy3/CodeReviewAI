@@ -9,15 +9,15 @@ co = cohere.AsyncClientV2(CO_API_KEY)
 
 
 async def analyze_code(review_request: ReviewRequest):
-    code = await get_file_contents(review_request.github_repo_url)
+    code = await get_repo_code_files(review_request.github_repo_url)
     prompt = f"""
     Imagine you are an IT professional and your task is to review the code as honestly as possible.
 
-    ### Additional Description:
+    Additional Description:
     
     {review_request.description}
     
-    ### Code Repository:
+    Code Repository:
     Review the code found in the repository at {code}. Record your observations in the blocks listed below.
     
     1. **Files Found:**
@@ -43,8 +43,9 @@ async def analyze_code(review_request: ReviewRequest):
     conclusion = parse_text(analysis_result, "**Conclusion:**")
     # parsing list files
     for files in code:
-        for k, v in files.items():
+        for k in files.keys():
             found_files.append(k)
+    # print(analysis_result)
     return ReviewResponse(found_files=found_files, downsides=downsides, rating=rating, conclusion=conclusion,
                           candidate_level=review_request.candidate_level,
                           github_repo_url=review_request.github_repo_url)

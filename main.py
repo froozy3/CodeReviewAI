@@ -1,20 +1,31 @@
-from models.models import ReviewRequest
-from services.github_service import *
+import logging
+
 from services.cohere_service import *
+from fastapi import FastAPI, APIRouter,HTTPException
+from fastapi.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
 
-async def main():
-    url = 'https://github.com/froozy3/CodeReviewAI'
-    content_directory = await get_directory_contents(url,'tests')
-    print(content_directory)
-    codes = await get_file_contents(url,'tests')
-    print(codes)
-    request = ReviewRequest(description="Analyze code", github_repo_url=url, candidate_level='Junior',
-                            )
-    # response = await analyze_code(request)
-    # print(response)
+app = FastAPI()
 
+router = APIRouter()
+
+
+@router.post("/analyze-code", response_model=ReviewResponse)
+async def analyze_code_rout(review_request: ReviewRequest):
+    try:
+        logging.info(f"Received request: {review_request}")
+        response = await analyze_code(review_request)
+        response_json = jsonable_encoder(response)
+        logging.info(f"Response: {response_json}")
+        return JSONResponse(content=response_json)
+    except Exception as e:
+        logging.error(f"Error occurred during code analysis {e}")
+        raise HTTPException(status_code=500,detail="An error occurred during code analysis")
+
+
+app.include_router(router)
 
 if __name__ == "__main__":
-    import asyncio
+    import uvicorn
 
-    asyncio.run(main())
+    uvicorn.run(app, host="127.0.0.1", port=8000)

@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fc639a6-d2f2-4147-bfe0-4f13113d57e9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cohere_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/cohere_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/github_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/github_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_review.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_review.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +48,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests for test_review.test_analyze_code_error.executor": "Run",
     "Python tests.Python tests for test_review.test_analyze_code_success.executor": "Run",
     "Python tests.Python tests for test_review.test_get_repo_code.executor": "Run",
     "Python.main.executor": "Run",
@@ -67,7 +65,7 @@
       <recent name="C:\Users\Владик\PycharmProjects\CodeReviewAI\models" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_review.test_analyze_code_error">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeReviewAI" />
       <option name="ENV_FILES" value="" />
@@ -137,9 +135,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Python tests for test_review.test_analyze_code_error" />
         <item itemvalue="Python tests.Python tests for test_review.test_analyze_code_success" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Python tests for test_review.test_get_repo_code" />
       </list>
     </recent_temporary>

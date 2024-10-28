@@ -13,7 +13,7 @@ CodeReviewAI is an asynchronous backend tool designed to analyze code repositori
 
 ### Prerequisites
 
-- Python 3.11 or higher
+- Python 3.10 or higher
 - Poetry for dependency management
 - Access to the Cohere API for AI analysis
 - Access to the GitHub API for fetching repository contents
